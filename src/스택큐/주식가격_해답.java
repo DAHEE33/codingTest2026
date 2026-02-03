@@ -3,7 +3,7 @@ package 스택큐;
 import java.util.Stack;
 
 
-public class 주식가격 {
+public class 주식가격_해답 {
 
     public static void main(String[] args) {
         int[] prices = {1, 2, 3, 2, 3};
