@@ -26,19 +26,29 @@ public class Hindex {
 
         Arrays.sort(citations);
 
-        for (int i = 0; i < citations.length; i++) {
-          int h = citations[i];
-          int count = 0;
-          for (int j = i ; j < citations.length; j++) {
-              if (citations[j] >= h) {
-                  count++;
-              }
-          }
-          if ( h >= count){
-              answer = count;
-              break;
-          }
+        for (int i = 0; i < citations.length - 1; i++) {
+            int citation = citations[i];
+            int count = citations.length - i;
+
+            int currentH = Math.min(citation, count);
+            answer = Math.max(answer, currentH);
         }
+//
+//        for (int i = 0; i < citations.length; i++) {
+//            int h = citations[i];
+//            int count = 0;
+//            for (int j = i; j < citations.length; j++) {
+//                if (citations[j] >= h) {
+//                    count++;
+//                }
+//            }
+//            if (h >= count) {
+//                answer = count;
+//                break;
+//            }
+//        }
+
+
 
         return answer;
     }
